@@ -1,0 +1,40 @@
+body{
+  background-color: #0B9EC7;
+}
+
+form {
+  border: 2px solid white;
+  padding: 20px;
+  display: inline-block;
+  width: 500px;
+  height: 350px;
+}
+
+h2.sign_up {
+  text-align: center;  
+  padding-top: 40px;
+}
+
+div.form_for_sign_up {
+  text-align: center;
+  padding-top: 30px;
+}
+
+div.mdl-textfield.mdl-js-textfield.is-upgraded {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+div.actions {
+  padding-top: 25px;  
+}
+
+input.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
+  font-size: 25px;
+  width: 150px;
+  height: 50px;
+  color: rgb(29, 34, 39);
+  background-color: #036E8C;
+}
+
