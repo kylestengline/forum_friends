@@ -1,4 +1,4 @@
-<!--<h2 class="sign_in">Sign In</h2>-->
+<h2 class="sign_in">Forum Friends Sign In</h2>
 
 <div class="form_for_sign_in">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -9,7 +9,7 @@
 
     <div class="mdl-textfield mdl-js-textfield">
       <%= f.label :password, class: "mdl-textfield__label", for: "sample2" %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "mdl-textfield__input", type: "text", id: "sample2" %>
+      <%= f.password_field :password, autocomplete: "off", class: "mdl-textfield__input", id: "sample2" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
