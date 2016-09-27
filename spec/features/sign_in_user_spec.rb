@@ -11,10 +11,8 @@ RSpec.feature "User Sign In" do
     visit "/"
 
     click_link "Sign In"
-
     fill_in "Email", with: @jon.email
     fill_in "Password", with: @jon.password
-
     click_button "Sign In"
     
     expect(page).to have_content("Signed in successfully.")
@@ -27,10 +25,8 @@ RSpec.feature "User Sign In" do
     visit "/"
 
     click_link "Sign In"
-
     fill_in "Email", with: ""
     fill_in "Password", with: ""
-
     click_button "Sign In"
 
     expect(page).to have_content("Invalid Email or password.")
