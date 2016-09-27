@@ -10,12 +10,12 @@ form {
   height: 350px;
 }
 
-h2.sign_up {
+h2.sign_up, .sign_in {
   text-align: center;  
   padding-top: 40px;
 }
 
-div.form_for_sign_up {
+div.form_for_sign_up, .form_for_sign_in {
   text-align: center;
   padding-top: 30px;
 }
@@ -28,6 +28,7 @@ div.mdl-textfield.mdl-js-textfield.is-upgraded {
 
 div.actions {
   padding-top: 25px;  
+  text-align: center;
 }
 
 input.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
