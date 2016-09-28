@@ -1,9 +1,18 @@
 <h2 class="main">Add A New Post to Forum Friends</h2>
 <!-- Simple Textfield -->
-<form action="#">
+<%= form_for @post, url: posts_path, html: {class: "create-new-post-form" } do |f| %>
   <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="sample1">
-    <label class="mdl-textfield__label" for="sample1">Text...</label>
+    <%= f.label :title, class: "mdl-textfield__label", for: "sample1" %>
+    <%= f.text_field :title, class: "mdl-textfield__input", type: "text", id: "sample1" %>
   </div>
-</form>
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :content, class: "mdl-textfield__label", for: "sample2" %>
+    <%= f.text_area :content, class: "mdl-textfield__input", type: "text", id: "sample2" %>
+  </div>
+
+  <div class="submit-post">
+    <%= f.submit "Create Post", class: "mdl-button mdl-js-button mdl-button--raised" %>
+  </div>
+<% end %>
 
