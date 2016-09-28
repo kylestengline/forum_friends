@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       flash[:success] = "Post Created!"
       redirect_to root_path
     else
-      flash[:danger] = "Post not created"
+      flash.now[:danger] = "Post not created"
       render :new
     end
   end
@@ -23,8 +23,7 @@ class PostsController < ApplicationController
 
   #strong params allowing title and content to come through
     def post_params
-      params.require(:post)
-      .permit(:title, :content)
+      params.require(:post).permit(:title, :content)
     end
 
 end

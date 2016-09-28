@@ -26,17 +26,18 @@
   <main class="mdl-layout__content">
     <% @posts.each do |p| %>
       <div class="page-content">
-          <ul class="demo-list-three mdl-list">
-            <li class="mdl-list__item mdl-list__item--three-line">
-              <span class="mdl-list__item-primary-content">
+        <ul class="demo-list-three mdl-list">
+          <li class="mdl-list__item mdl-list__item--three-line">
+            <span class="mdl-list__item-primary-content">
               <span><%= link_to p.title, class: "mdl-navigation__link" %></span>
               <span class="mdl-list__item-text-body">
                 <%= truncate(p.content, length: 200) %>
               </span>
               <div class="post_creator">
-              <% if p.user %>
-                <small>Created by: <%= p.user.email %></small>
-              <% end %>
+                <% if p.user %>
+                  <small>Created by: <%= p.user.email %></small>
+                <% end %>
+              </div>
             </span>
           </li>
         </ul>

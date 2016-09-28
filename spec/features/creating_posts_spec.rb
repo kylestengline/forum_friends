@@ -20,4 +20,18 @@ RSpec.feature "Creating Posts" do
     expect(page).to have_content("Created by: #{@joe.email}")
 
   end
+
+  scenario "A user can not create an article" do
+    visit "/"
+
+    click_link "Add New Post"
+    fill_in "Title", with: ""
+    fill_in "Content", with: ""
+
+    click_button "Create Post"
+
+    expect(page).to have_content("Post not created")
+    expect(page).to have_content("Title can't be blank")
+    expect(page).to have_content("Content can't be blank")
+  end
 end
