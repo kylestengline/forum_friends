@@ -8,6 +8,7 @@ RSpec.feature "Creating Posts" do
   end
 
   scenario "A valid user can create a post" do
+    visit "/"
     
     click_link "Add New Post"
     fill_in "Title", with: "Title"
