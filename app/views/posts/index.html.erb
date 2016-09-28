@@ -1,5 +1,4 @@
 <html>
-<head>
   <title>Forum Friends</title>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
@@ -14,19 +13,19 @@
             <%= link_to "Sign Up", new_user_registration_path, class: "mdl-navigation__link" %>
             <%= link_to "Sign In", new_user_session_path, class: "mdl-navigation__link" %>
           <% else %>
-            <h5>Welcome, <%= current_user.email %></h5>
+            <h5 class="welcome-email">Welcome, <%= current_user.email %></h5>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "mdl-navigation__link" %>
           <% end %>
         </nav>
       </div>
     </header>
-</head>
-<body>
   <!-- Not showing on page. May have something to do with mdl-layout div? -->
-  <div class="create-post-button">
-    <%= link_to "Create Post", new_post_path, class: "mdl-button mdl-js-button mdl-button--raised" %>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="add-new-post">
+          <%= link_to "Add New Post", new_post_path, class: "mdl-button mdl-js-button mdl-button--raised" %>
+        </div>
+      </div>
+    </main>
   </div>
-</div>
-</body>
 </html>
-<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
