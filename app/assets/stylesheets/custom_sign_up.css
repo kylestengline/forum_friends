@@ -10,12 +10,12 @@ form {
   height: 350px;
 }
 
-h2.sign_up, .sign_in {
+h2.sign_up, .sign_in, .main {
   text-align: center;  
   padding-top: 40px;
 }
 
-div.form_for_sign_up, .form_for_sign_in {
+div.form_for_sign_up, .form_for_sign_in, .form-for-new-post {
   text-align: center;
   padding-top: 30px;
 }
@@ -39,3 +39,6 @@ input.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
   background-color: #036E8C;
 }
 
+.add-new-post {
+  margin: 100px;
+}

@@ -1,18 +1,27 @@
 <h2 class="main">Add A New Post to Forum Friends</h2>
 <!-- Simple Textfield -->
-<%= form_for @post, url: posts_path, html: {class: "create-new-post-form" } do |f| %>
+<div class="form-for-new-post">
+  <%= form_for @post, url: posts_path, html: {class: "create-new-post-form" } do |f| %>
+    <% if @post.errors.any? %>
+      <%= pluralize(@post.errors.count, "error") %>
+      kept this post from being published:
+      <% @post.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    <% end %>
   <div class="mdl-textfield mdl-js-textfield">
-    <%= f.label :title, class: "mdl-textfield__label", for: "sample1" %>
+    <%= f.label :title, class: "mdl-textfield__label", for: "sample1" %><br/>
     <%= f.text_field :title, class: "mdl-textfield__input", type: "text", id: "sample1" %>
   </div>
 
   <div class="mdl-textfield mdl-js-textfield">
-    <%= f.label :content, class: "mdl-textfield__label", for: "sample2" %>
+    <%= f.label :content, class: "mdl-textfield__label", for: "sample2" %><br/>
     <%= f.text_area :content, class: "mdl-textfield__input", type: "text", id: "sample2" %>
   </div>
 
   <div class="submit-post">
     <%= f.submit "Create Post", class: "mdl-button mdl-js-button mdl-button--raised" %>
   </div>
+</div>
 <% end %>
 
