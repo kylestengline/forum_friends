@@ -28,7 +28,6 @@ RSpec.feature "Creating Posts" do
     click_link "Add New Post"
     fill_in "Title", with: ""
     fill_in "Content", with: ""
-
     click_button "Create Post"
 
     expect(page).to have_content("Post not created")
