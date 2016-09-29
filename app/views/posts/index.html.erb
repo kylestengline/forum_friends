@@ -29,7 +29,7 @@
         <ul class="demo-list-three mdl-list">
           <li class="mdl-list__item mdl-list__item--three-line">
             <span class="mdl-list__item-primary-content">
-              <span><%= link_to p.title, class: "mdl-navigation__link" %></span>
+              <span><%= link_to p.title, post_path(p.id), class: "mdl-navigation__link" %></span>
               <span class="mdl-list__item-text-body">
                 <%= truncate(p.content, length: 200) %>
               </span>

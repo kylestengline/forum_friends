@@ -10,8 +10,11 @@ RSpec.feature "Showing Posts" do
   scenario "It shows all posts" do
     visit "/"
 
-    expect(page).to have_link(@post.title)
-    expect(page).to have_content(@post.content)
-  end
+    click_link @post.title
 
+    expect(page).to have_content(@post.title)
+    expect(page).to have_content(@post.content)
+    expect(current_path).to eq(post_path(@post))
+  
+  end
 end
