@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index    
     @posts = Post.all
@@ -9,7 +10,7 @@ class PostsController < ApplicationController
   end
    
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post Created!"
       redirect_to root_path

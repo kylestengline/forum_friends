@@ -33,11 +33,11 @@
               <span class="mdl-list__item-text-body">
                 <%= truncate(p.content, length: 200) %>
               </span>
-             <!-- <div class="post_creator">
-                may have to change user_id to user with later feature
-                <#% if p.user_id %>
-                  <small>Created by: <#%= p.user_id.email %></small>
-                <#% end %>-->
+             <div class="post_creator">
+               <!-- user .build to get the association and thats how I can use p.user  -->
+                <% if p.user %>
+                  <small>Created by: <%= p.user.email %></small>
+                <% end %>
               </div>
             </span>
           </li>

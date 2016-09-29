@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Creating Posts" do
   
   before do 
-    @joe = User.create!(email: "joe@example.com", password: "wonders")
+    @joe = User.create!(email: "joe@example.com", password: "password")
     login_as(@joe)
   end
 
@@ -17,8 +17,7 @@ RSpec.feature "Creating Posts" do
 
     expect(page).to have_content("Post Created!")
     expect(current_path).to eq root_path
-    #implement this when we add associations
-#    expect(page).to have_content("Created by: #{@joe.email}")
+    expect(page).to have_content("Created by: #{@joe.email}")
 
   end
 
