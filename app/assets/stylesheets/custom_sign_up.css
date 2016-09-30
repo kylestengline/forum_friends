@@ -3,11 +3,12 @@ body{
 }
 
 form {
-  border: 2px solid white;
+  border: 2px solid black;
   padding: 20px;
   display: inline-block;
   width: 500px;
   height: 350px;
+  background-color: white;
 }
 
 h2.sign_up, .sign_in, .main {
@@ -47,6 +48,10 @@ input.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
   width: 500px;
   border: 2px solid black;
   background-color: white;
+}
+
+.page-content {
+  margin-top: 50px;
 }
 
 .mdl-card__title-text {

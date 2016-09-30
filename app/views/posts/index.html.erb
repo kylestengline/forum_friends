@@ -1,26 +1,8 @@
 <html>
 <head>
   <title>Forum Friends</title>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-      <!-- Title -->
-        <span class="mdl-layout-title">Welcome to Forum Friends</span>
-      <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <% unless user_signed_in? %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "mdl-navigation__link" %>
-            <%= link_to "Sign In", new_user_session_path, class: "mdl-navigation__link" %>
-          <% else %>
-            <h5 class="welcome-email">Welcome, <%= current_user.email %></h5>
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "mdl-navigation__link" %>
-          <% end %>
-        </nav>
-      </div>
-    </header>
-  </div>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+</div>
 </head>
 <body>
   <main class="mdl-layout__content">
