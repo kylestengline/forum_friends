@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 #My Gems
 gem 'devise'
 gem 'better_errors'
+gem 'rails-controller-testing'
 
 
 group :development, :test do

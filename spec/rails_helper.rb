@@ -14,6 +14,16 @@ Warden.test_mode!
 Capybara.configure do |config|
     config.ignore_hidden_elements = true
 end
+
+RSpec.configure do |config|
+  config.include Rails::Controller::Testing::TestProcess
+  config.include Rails::Controller::Testing::TemplateAssertions
+  config.include Rails::Controller::Testing::Integration
+end
+
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
