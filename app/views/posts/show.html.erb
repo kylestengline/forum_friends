@@ -12,4 +12,24 @@
       <button><%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, class: "mdl-button mdl-js-button mdl-button--raised" %></button>
     </div>
   <% end %>
+  <!-- this form isn't working for some reason. -->
+  <%= form_for [ @post, @comment ] do |f| %>
+    <% if @comment.errors.any? %>
+      <%= pluralize(@comment.errors.count, "error") %>
+        prevented this comment from being posted:
+        <% @comment.errors.full_messages.each do |msg| %>
+          <%= msg %>
+       <% end %>
+     <% end %>
+    <div class="form-comment">
+      <div class="mdl-textfield mdl-js-textfield">
+        <%= f.label :content, "New Comment", class: "mdl-textfield__label", for: "sample1" %><br/>
+        <%= f.text_area :content, class: "mdl-textfield__input", placeholder: "Comment Here", type: "text", id: "sample1" %>
+      </div>
+
+      <div class="submit-comment">
+        <button><%= f.submit class: "mdl-button mdl-js-button mdl-button--raised" %></button>
+      </div>
+    </div>
+  <% end %>
 </div>
