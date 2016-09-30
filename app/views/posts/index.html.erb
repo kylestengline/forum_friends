@@ -29,14 +29,14 @@
         <ul class="demo-list-three mdl-list">
           <li class="mdl-list__item mdl-list__item--three-line">
             <span class="mdl-list__item-primary-content">
-              <span><%= link_to p.title, post_path(p.id), class: "mdl-navigation__link" %></span>
-              <span class="mdl-list__item-text-body">
+              <span><%= link_to p.title, post_path(p.id), class: "mdl-navigation__link", id: "post-title" %></span>
+              <span id="post-content" class="mdl-list__item-text-body">
                 <%= truncate(p.content, length: 200) %>
               </span>
-             <div class="post_creator">
+              <div class="post_creator">
                <!-- user .build to get the association and thats how I can use p.user  -->
                 <% if p.user %>
-                  <small>Created by: <%= p.user.email %></small>
+                  <small class="author">Created by: <%= p.user.email %></small>
                 <% end %>
               </div>
             </span>

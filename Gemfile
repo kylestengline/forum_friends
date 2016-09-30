@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 #My Gems
 gem 'devise'
+gem 'better_errors'
 
 
 group :development, :test do

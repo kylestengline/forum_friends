@@ -24,6 +24,28 @@ class PostsController < ApplicationController
 
   def show
   end
+   
+  def edit
+    if @post.user != current_user
+      flash[:danger] = "You can't edit other users articles"
+      redirect_to root_path
+    end
+  end
+
+  def update
+    if @post.user != current_user
+      flash[:danger] = "You can't edit other users articles"
+      redirect_to root_path
+    else
+      if @post.update(post_params)
+        flash[:success] = "Post Updated"
+        redirect_to @post
+      else
+        flash[:danger] = "Post has not been updated"
+        render :edit
+      end
+    end
+  end
 
   private
 

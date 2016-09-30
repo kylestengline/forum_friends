@@ -1,5 +1,5 @@
 body{
-  background-color: #0B9EC7;
+  background-color: #d8d8d8;
 }
 
 form {
@@ -39,8 +39,67 @@ input.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
   background-color: #036E8C;
 }
 
+.page-content, .demo-card-wide.mdl-card.mdl-shadow--2dp {
+  margin-top: 150px;
+  margin-left: 150px;
+  margin-bottom: 60px;
+  height: 200px;
+  width: 500px;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.mdl-card__title-text {
+  color: black;
+}
+
+.mdl-card__supporting-text {
+  font-size: 20px;
+}
+
+.demo-card-wide.mdl-card.mdl-shadow--2dp {
+  margin-top: 50px;
+  height: 300px;
+  width: 500px; 
+}
+
+.mdl-card__actions.mdl-card--border {
+  padding-top: 100px;
+}
+
+.mdl-card--border {
+  padding-top: 30px;
+}
+
+.author {
+  position: absolute;
+}
+
+.author-on-show {
+  font-size: 12px;
+}
+
+a.mdl-navigation__link {
+  padding-bottom: 10px;
+}
+
+a:hover{
+  cursor: pointer;
+  color: rgb(33,150,243);
+}
+
+a#post-title {
+  font-size: 30px;
+}
+
+span#post-content {
+  font-size: 20px;
+  padding-top: 25px;
+}
+
 .add-new-post {
-  margin: 100px;
+  margin-left: 150px;
+  position: relative;
 }
 
 .demo-card-wide.mdl-card {
@@ -49,7 +108,7 @@ input.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
 
 .demo-card-wide > .mdl-card__title {
   color: #fff;
-  height: 176px;
+  height: 60px;
 }
 
 .demo-card-wide > .mdl-card__menu {

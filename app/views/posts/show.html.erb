@@ -1,11 +1,12 @@
-<!-- Wide card with share menu button -->
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text"><%= @post.title %></h2>
+    <h4 class="mdl-card__title-text"><%= @post.title %></h4>
   </div>
   <div class="mdl-card__supporting-text">
-    <%= @post.content %>
+    <%= @post.content %><br/><br/>
+    <small class="author-on-show">Created by: <%= @post.user.email %></small>
   </div>
   <div class="mdl-card__actions mdl-card--border">
+    <button class="mdl-button mdl-js-button mdl-button--raised"><%= link_to "Edit Post", edit_post_path(@post.id) %></button>
   </div>
 </div>
