@@ -27,14 +27,14 @@ class PostsController < ApplicationController
    
   def edit
     if @post.user != current_user
-      flash[:danger] = "You can't edit other users articles"
+      flash[:danger] = "You can't edit other users posts"
       redirect_to root_path
     end
   end
 
   def update
     if @post.user != current_user
-      flash[:danger] = "You can't edit other users articles"
+      flash[:danger] = "You can't edit other users posts"
       redirect_to root_path
     else
       if @post.update(post_params)
@@ -44,6 +44,16 @@ class PostsController < ApplicationController
         flash[:danger] = "Post has not been updated"
         render :edit
       end
+    end
+  end
+
+  def destroy
+    if @post.destroy  
+      flash[:success] = "Post has been deleted"
+      redirect_to root_path
+    else
+      flash[:danger] = "Post was not deleted"
+      render :show
     end
   end
 

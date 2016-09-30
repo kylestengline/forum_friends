@@ -16,10 +16,10 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>">
+    <% flash.each do |name, msg| %>
+      <div class="flash-alerts<%= name %>">
         <li>
-          <%= value %>
+          <%= msg %>
         </li>
       </div>
       <% end %>

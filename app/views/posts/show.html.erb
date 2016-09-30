@@ -6,7 +6,10 @@
     <%= @post.content %><br/><br/>
     <small class="author-on-show">Created by: <%= @post.user.email %></small>
   </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-js-button mdl-button--raised"><%= link_to "Edit Post", edit_post_path(@post.id) %></button>
-  </div>
+  <% if user_signed_in? && current_user == @post.user %>
+    <div class="mdl-card__actions mdl-card--border">
+      <button><%= link_to "Edit Post", edit_post_path(@post.id), class: "mdl-button mdl-js-button mdl-button--raised" %></button>
+      <button><%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, class: "mdl-button mdl-js-button mdl-button--raised" %></button>
+    </div>
+  <% end %>
 </div>
