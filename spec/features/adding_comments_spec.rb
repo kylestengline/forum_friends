@@ -1,11 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "Adding comments" do
-  
-  DatabaseCleaner.strategy = :transaction
-  DatabaseCleaner.start
-  
-  DatabaseCleaner.clean
 
   before do
     @joe = User.create(email: "joe@example.com", password: "password")
