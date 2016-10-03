@@ -12,12 +12,11 @@ RSpec.feature "Editing Post" do
   scenario "Valid user can edit a post" do
     visit "/"
 
-    click_link(@post.title)
+    click_link @post.title
+    click_link "Edit Post"
 
-    click_button "Edit Post"
-
-    expect(page).to have_content(@post.title)
-    expect(page).to have_content(@post.content)
+    fill_in "Title", with: "Updated Title"
+    fill_in "Content", with: "Updated Content"
 
     click_button "Update Post"
 
