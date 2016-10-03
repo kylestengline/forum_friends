@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :get_post_id
+  before_action :get_post
   
   def create
     unless current_user
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:content)
     end
 
-    def get_post_id
+    def get_post
       @post = Post.find(params[:post_id])
     end
 end

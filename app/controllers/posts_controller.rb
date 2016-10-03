@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
-  before_action :post_id, only: [:show, :edit, :destroy, :update]
+  before_action :get_post, only: [:show, :edit, :destroy, :update]
 
   def index    
     @posts = Post.all
@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = @post.comments.build
   end
    
   def edit
@@ -64,7 +65,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content)
     end
 
-    def post_id
+    def get_post
       @post = Post.find(params[:id])
     end
 

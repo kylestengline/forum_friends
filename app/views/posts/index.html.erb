@@ -24,15 +24,10 @@
             </span>
           </li>
         </ul>
-        <#% if @posts.present? %>
-         <!-- <div class="page-content">
-            <h4>No Posts Yet! Be the first to add one!</h4>
-         </div>-->
-        <#% end %>
       </div>
     <% end %>
     <div class="add-new-post">
-      <%= link_to "Add New Post", new_post_path, class: "mdl-button mdl-js-button mdl-button--raised" %>
+      <%= link_to "Add New Post", new_post_path, class: "mdl-button mdl-js-button mdl-button--raised", id: "new-post-button" %>
     </div>
   </main>
 </body>

@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.feature "Adding comments" do
   
+  DatabaseCleaner.strategy = :transaction
+  DatabaseCleaner.start
+  
+  DatabaseCleaner.clean
+
   before do
     @joe = User.create(email: "joe@example.com", password: "password")
     @jeff = User.create(email: "jeff@example.com", password: "password")
@@ -18,8 +23,7 @@ RSpec.feature "Adding comments" do
     fill_in "New Comment", with: "Great Post!"
     click_button "Submit Comment"
 
-    expect(page).to have_content("Comment Created!")
-    expect(page).to have_content("Great Post!")
+    expect(page).to have_content("Comment created!")
     expect(current_path).to eq(post_path(@post.comments.last.id))
   end
 end

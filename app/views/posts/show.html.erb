@@ -8,12 +8,36 @@
   </div>
   <% if user_signed_in? && current_user == @post.user %>
     <div class="mdl-card__actions mdl-card--border">
-      <button><%= link_to "Edit Post", edit_post_path(@post.id), class: "mdl-button mdl-js-button mdl-button--raised" %></button>
-      <button><%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, class: "mdl-button mdl-js-button mdl-button--raised" %></button>
+      <button class="mdl-button mdl-js-button mdl-button--raised" ><%= link_to "Edit Post", edit_post_path(@post.id) %></button>
+      <button class="mdl-button mdl-js-button mdl-button--raised" ><%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %></button>
     </div>
   <% end %>
-  <!-- this form isn't working for some reason. -->
-  <%= form_for [ @post, @comment ] do |f| %>
+
+  <div class='col-md-12'>
+    <header>
+      <h4 class="comments-header">Comments</h4>
+    </header>
+
+    <div class="col-md-10">
+      <% if @post.comments.any? %>
+        <% @post.comments.persisted.each do |comment| %>
+      <div class="comment-content">
+        <h6 class="comment"><%= comment.content %></h6>
+      </div>
+      <div class="comment-time">
+        <small><%= time_ago_in_words(comment.created_at) %>
+        ago by <%= comment.user.email %></small>
+      </div>
+      <hr>
+        <% end %>
+      <% else %>
+        There are no comments to show.
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="form-for-comments">
+  <%= form_for [@post, @comment ] do |f| %>
     <% if @comment.errors.any? %>
       <%= pluralize(@comment.errors.count, "error") %>
         prevented this comment from being posted:
@@ -22,13 +46,12 @@
        <% end %>
      <% end %>
     <div class="form-comment">
-      <div class="mdl-textfield mdl-js-textfield">
-        <%= f.label :content, "New Comment", class: "mdl-textfield__label", for: "sample1" %><br/>
-        <%= f.text_area :content, class: "mdl-textfield__input", placeholder: "Comment Here", type: "text", id: "sample1" %>
+      <div class="mdl-textfield mdl-js-textfield" style="margin-left:0px; width:500px;">
+        <%= f.label :content, class: "mdl-textfield__label", for: "sample1" %><br/>
+        <%= f.text_area :content, class: "mdl-textfield__input", placeholder: "New Comment", type: "text", id: "sample1", style: "height: 120px; margin-top:-35px;" %>
       </div>
-
       <div class="submit-comment">
-        <button><%= f.submit class: "mdl-button mdl-js-button mdl-button--raised" %></button>
+        <%= f.submit "Submit Comment", class: "mdl-button mdl-js-button mdl-button--raised" %>
       </div>
     </div>
   <% end %>
