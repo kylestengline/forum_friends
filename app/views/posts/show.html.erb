@@ -41,14 +41,14 @@
     <% if @comment.errors.any? %>
       <%= pluralize(@comment.errors.count, "error") %>
         prevented this comment from being posted:
-        <% @comment.errors.full_messages.each do |msg| %>
-          <%= msg %>
-       <% end %>
-     <% end %>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    <% end %>
     <div class="form-comment">
       <div class="mdl-textfield mdl-js-textfield" style="margin-left:0px; width:500px;">
         <%= f.label :content, class: "mdl-textfield__label", for: "sample1" %><br/>
-        <%= f.text_area :content, class: "mdl-textfield__input", placeholder: "New Comment", type: "text", id: "sample1", style: "height: 120px; margin-top:-35px;" %>
+        <%= f.text_area :content, class: "mdl-textfield__input", type: "text", id: "sample1", style: "height: 120px; margin-top:-35px;" %>
       </div>
       <div class="submit-comment">
         <%= f.submit "Submit Comment", class: "mdl-button mdl-js-button mdl-button--raised" %>
