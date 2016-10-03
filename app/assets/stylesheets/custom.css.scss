@@ -15,6 +15,22 @@ form {
   background-color: white;
 }
 
+li {
+  margin-top: 5px;
+}
+
+div.flash-alertssuccess {
+  display: inline-block;
+  font-size: 25px;
+  background-color: rgba(116, 221, 116, 0.35);
+  height: 30px;
+  width: 1276px;
+  border: 2px solid black;
+  text-align: center;
+  font-weight: 200;
+  list-style: none;
+}
+
 h2.sign_up, .sign_in, .main {
   text-align: center;  
   padding-top: 40px;
@@ -86,8 +102,8 @@ input.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored {
 
 form.new_comment {
   display: block;
-  width: 852px;
-  height: 225px;
+  width: 500px;
+  height: 240px;
   margin-left: 155px;
   overflow-y: scroll;
 }
@@ -98,6 +114,7 @@ h4.comments-header {
 
 div.comment-content, .comment-time {
   text-align: center;
+  word-wrap: break-word;
 }
 
 div.comment-content {
@@ -132,6 +149,7 @@ a#post-title {
 span#post-content {
   font-size: 20px;
   padding-top: 25px;
+  word-wrap: break-word;
 }
 
 .add-new-post {

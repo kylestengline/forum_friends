@@ -13,11 +13,12 @@
     </div>
   <% end %>
 
-  <div class='col-md-12'>
-    <header>
-      <h4 class="comments-header">Comments</h4>
-    </header>
-
+    <div class="mdl-card__actions mdl-card--border">
+      <div class='col-md-12'>
+        <header>
+          <h4 class="comments-header">Comments:</h4>
+        </header>
+    </div>
     <div class="col-md-10">
       <% if @post.comments.any? %>
         <% @post.comments.persisted.each do |comment| %>
@@ -25,7 +26,7 @@
         <h6 class="comment"><%= comment.content %></h6>
       </div>
       <div class="comment-time">
-        <small><%= time_ago_in_words(comment.created_at) %>
+        <small>Comment posted <%= time_ago_in_words(comment.created_at) %>
         ago by <%= comment.user.email %></small>
       </div>
       <hr>
@@ -48,7 +49,7 @@
     <div class="form-comment">
       <div class="mdl-textfield mdl-js-textfield" style="margin-left:0px; width:500px;">
         <%= f.label :content, class: "mdl-textfield__label", for: "sample1" %><br/>
-        <%= f.text_area :content, class: "mdl-textfield__input", type: "text", id: "sample1", style: "height: 120px; margin-top:-35px;" %>
+        <%= f.text_area :content, placeholder: "New Comment", class: "mdl-textfield__input", type: "text", id: "sample1", style: "height: 140px;" %>
       </div>
       <div class="submit-comment">
         <%= f.submit "Submit Comment", class: "mdl-button mdl-js-button mdl-button--raised" %>

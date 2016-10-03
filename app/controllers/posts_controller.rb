@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def destroy
     if @post.destroy  
       flash[:success] = "Post has been deleted"
-      redirect_to root_path
+      redirect_to posts_path
     else
       flash[:danger] = "Post was not deleted"
       render :show
