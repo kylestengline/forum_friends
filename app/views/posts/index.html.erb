@@ -8,7 +8,7 @@
             <span class="mdl-list__item-primary-content">
               <span><%= link_to p.title, post_path(p.id), class: "mdl-navigation__link", id: "post-title" %></span>
               <span id="post-content" class="mdl-list__item-text-body">
-                <%= truncate(p.content, length: 40) %>
+                <%= truncate(p.content, length: 50) %>
               </span>
               <div class="post_creator">
                <!-- user .build to get the association and thats how I can use p.user  -->
