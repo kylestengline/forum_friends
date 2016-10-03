@@ -19,7 +19,7 @@ li {
   margin-top: 5px;
 }
 
-div.flash-alertssuccess, .flash-alertsnotice {
+div.flash-alertssuccess, .flash-alertsnotice, .flash-alertsdanger {
   display: inline-block;
   font-size: 25px;
   background-color: rgba(116, 221, 116, 0.35);
@@ -29,6 +29,10 @@ div.flash-alertssuccess, .flash-alertsnotice {
   text-align: center;
   font-weight: 200;
   list-style: none;
+}
+
+div.flash-alertsdanger {
+  background-color: rgba(195, 89, 89, 0.68);  
 }
 
 h2.sign_up, .sign_in, .main {
