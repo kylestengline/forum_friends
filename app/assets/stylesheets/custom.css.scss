@@ -19,7 +19,7 @@ li {
   margin-top: 5px;
 }
 
-div.flash-alertssuccess, .flash-alertsnotice, .flash-alertsdanger {
+div.flash-alertssuccess, .flash-alertsnotice, .flash-alertsdanger, .flash-alertsalert {
   display: inline-block;
   font-size: 25px;
   background-color: rgba(116, 221, 116, 0.35);
@@ -31,7 +31,7 @@ div.flash-alertssuccess, .flash-alertsnotice, .flash-alertsdanger {
   list-style: none;
 }
 
-div.flash-alertsdanger {
+div.flash-alertsdanger, .flash-alertsalert {
   background-color: rgba(195, 89, 89, 0.68);  
 }
 
