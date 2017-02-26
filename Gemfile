@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'better_errors'
 gem 'rails-controller-testing'
+gem 'rails_12factor', group: :production
 
 
 group :development, :test do
